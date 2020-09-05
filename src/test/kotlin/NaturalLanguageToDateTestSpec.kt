@@ -225,5 +225,23 @@ object NaturalLanguageToDateTestSpec: Spek({
             )
         }
 
+
+
+
+        it("example") {
+            val now = Calendar.getInstance()
+
+            println("Now: " + dateFormat.format(now.time))
+
+            val example1 = NaturalLanguageToDate().convert("Remind to go shopping next week")
+            println("Remind to go shopping next week " + dateFormat.format(example1[0].time))
+
+            val example2 = NaturalLanguageToDate().convert("It rained a lot yesterday")
+            println("It rained a lot yesterday " + dateFormat.format(example2[0].time))
+
+            val example3 = NaturalLanguageToDate().convert("I'm finishing the college in the next 2 years")
+            println("I'm finishing the college in the next two years " + dateFormat.format(example3[0].time))
+        }
+
     }
 })
